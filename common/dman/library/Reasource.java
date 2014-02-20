@@ -1,4 +1,4 @@
-package library;
+package dman.library;
 
 public class Reasource {
 
@@ -7,7 +7,7 @@ public class Reasource {
 	//The Mod Name stored for easy referance
 	public static final String Mod_Name = "Demolition Man";
 	//The Mod Version stored for easy referance
-	public static final String Version = "0.0.1";
+	public static final String Version = "0.1.0";
 	
 	
 }
