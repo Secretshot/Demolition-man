@@ -17,8 +17,7 @@ import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class ThreeByThree extends Block{
-	
+public class NineByNine extends Block{
 	@SideOnly(Side.CLIENT)
 	private Icon iconTop;
 	private Icon iconFront;
@@ -27,21 +26,19 @@ public class ThreeByThree extends Block{
 	private Icon iconSideDown;
 	private Icon iconSideUp;
 	
-	//private int BlockFront;
 	
-	
-	public ThreeByThree(int ID, Material Material) {
+	public NineByNine(int ID, Material Material) {
 		super(ID, Material);
 		this.setHardness(2.0F);
 		this.setStepSound(Block.soundMetalFootstep);
 		this.setCreativeTab(DemolitionMan.DemoMan);
-		this.setUnlocalizedName("3x3 Charge");
+		this.setUnlocalizedName("9x9 Charge");
 	}
 	
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister icon){
 		this.blockIcon = icon.registerIcon(Reasource.Mod_ID + ":" + "3x3tb");
-		this.iconFront = icon.registerIcon(Reasource.Mod_ID + ":" + "3x3");
+		this.iconFront = icon.registerIcon(Reasource.Mod_ID + ":" + "9x9");
 		this.iconLeft = icon.registerIcon(Reasource.Mod_ID + ":" + "3x3left");
 		this.iconRight = icon.registerIcon(Reasource.Mod_ID + ":" + "3x3right");
 		this.iconSideDown = icon.registerIcon(Reasource.Mod_ID + ":" + "3x3down");
@@ -49,7 +46,7 @@ public class ThreeByThree extends Block{
 	}
 	
 	public int idDropped(int par1, Random random, int par3){
-		return dman.Blocks.ThreeByThree.blockID;
+		return dman.Blocks.NineByNine.blockID;
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -127,7 +124,7 @@ public class ThreeByThree extends Block{
 	}
 	
 	public TileEntity createNewTileEntity(World world){
-		 return new dman.tileEntity.TileEntTheeByThree();
+		 return new dman.tileEntity.TileEntNineByNine();
 	}
 	
 	@Override
@@ -177,10 +174,10 @@ public class ThreeByThree extends Block{
 		//System.out.println(world.getBlockMetadata(x, y, z));
 		switch (world.getBlockMetadata(x, y, z)){
 			case 0:{
-				y -= 2;
-				for(int yl = y-1; yl <= y+1; yl ++){ //y loop
-					for(int xl = x-1; xl <= x+1; xl ++){ //x loop
-						for(int zl = z-1; zl <= z+1; zl ++){ //z loop
+				y -= 5;
+				for(int yl = y-4; yl <= y+4; yl ++){ //y loop
+					for(int xl = x-4; xl <= x+4; xl ++){ //x loop
+						for(int zl = z-4; zl <= z+4; zl ++){ //z loop
 							if (world.getBlockId(xl, yl, zl) == 7){
 								
 							}
@@ -190,14 +187,14 @@ public class ThreeByThree extends Block{
 						}
 					}
 				}
-				y +=2;
+				y +=5;
 			}
 			break;
 			case 1:{
-				y += 2;
-				for(int yl = y-1; yl <= y+1; yl ++){ //y loop
-					for(int xl = x-1; xl <= x+1; xl ++){ //y loop
-						for(int zl = z-1; zl <= z+1; zl ++){ //y loop
+				y += 5;
+				for(int yl = y-4; yl <= y+4; yl ++){ //y loop
+					for(int xl = x-4; xl <= x+4; xl ++){ //y loop
+						for(int zl = z-4; zl <= z+4; zl ++){ //y loop
 							if (world.getBlockId(xl, yl, zl) == 7){
 								
 							}
@@ -207,14 +204,14 @@ public class ThreeByThree extends Block{
 						}
 					}
 				}
-				y -= 2;
+				y -= 5;
 			}
 			break;
 			case 2:{
-				z += 2;
-				for(int yl = y-1; yl <= y+1; yl ++){ //y loop
-					for(int xl = x-1; xl <= x+1; xl ++){ //y loop
-						for(int zl = z-1; zl <= z+1; zl ++){ //y loop
+				z += 5;
+				for(int yl = y-4; yl <= y+4; yl ++){ //y loop
+					for(int xl = x-4; xl <= x+4; xl ++){ //y loop
+						for(int zl = z-4; zl <= z+4; zl ++){ //y loop
 							if (world.getBlockId(xl, yl, zl) == 7){
 								
 							}
@@ -224,14 +221,14 @@ public class ThreeByThree extends Block{
 						}
 					}
 				}
-				z -= 2;
+				z -= 5;
 			}
 			break;
 			case 3:{
-				z -= 2;
-				for(int yl = y-1; yl <= y+1; yl ++){ //y loop
-					for(int xl = x-1; xl <= x+1; xl ++){ //y loop
-						for(int zl = z-1; zl <= z+1; zl ++){ //y loop
+				z -= 5;
+				for(int yl = y-4; yl <= y+4; yl ++){ //y loop
+					for(int xl = x-4; xl <= x+4; xl ++){ //y loop
+						for(int zl = z-4; zl <= z+4; zl ++){ //y loop
 							if (world.getBlockId(xl, yl, zl) == 7){
 								
 							}
@@ -241,14 +238,14 @@ public class ThreeByThree extends Block{
 						}
 					}
 				}
-				z += 2;
+				z += 5;
 			}
 			break;
 			case 4:{
-				x += 2;
-				for(int yl = y-1; yl <= y+1; yl ++){ //y loop
-					for(int xl = x-1; xl <= x+1; xl ++){ //y loop
-						for(int zl = z-1; zl <= z+1; zl ++){ //y loop
+				x += 5;
+				for(int yl = y-4; yl <= y+4; yl ++){ //y loop
+					for(int xl = x-4; xl <= x+4; xl ++){ //y loop
+						for(int zl = z-4; zl <= z+4; zl ++){ //y loop
 							if (world.getBlockId(xl, yl, zl) == 7){
 								
 							}
@@ -258,14 +255,14 @@ public class ThreeByThree extends Block{
 						}
 					}
 				}
-				x-=2;
+				x-=5;
 			}
 			break;
 			case 5:{
-				x -= 2;
-				for(int yl = y-1; yl <= y+1; yl ++){ //y loop
-					for(int xl = x-1; xl <= x+1; xl ++){ //y loop
-						for(int zl = z-1; zl <= z+1; zl ++){ //y loop
+				x -= 5;
+				for(int yl = y-4; yl <= y+4; yl ++){ //y loop
+					for(int xl = x-4; xl <= x+4; xl ++){ //y loop
+						for(int zl = z-4; zl <= z+4; zl ++){ //y loop
 							if (world.getBlockId(xl, yl, zl) == 7){
 								
 							}
@@ -275,7 +272,7 @@ public class ThreeByThree extends Block{
 						}
 					}
 				}
-				x += 2;
+				x += 5;
 			}
 			break;
 			}
