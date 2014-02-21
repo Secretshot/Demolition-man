@@ -17,7 +17,7 @@ import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class NineByNine extends Block{
+public class SevenBySeven extends Block{
 	@SideOnly(Side.CLIENT)
 	private Icon iconTop;
 	private Icon iconFront;
@@ -25,23 +25,22 @@ public class NineByNine extends Block{
 	private Icon iconRight;
 	private Icon iconSideDown;
 	private Icon iconSideUp;
-	private final int BlockOffset = 5;
-	private final int ClearCenterOffset = 4;
+	private final int BlockOffset = 4;
+	private final int ClearCenterOffset = 3;
 	
 	
-	
-	public NineByNine(int ID, Material Material) {
+	public SevenBySeven(int ID, Material Material) {
 		super(ID, Material);
 		this.setHardness(2.0F);
 		this.setStepSound(Block.soundMetalFootstep);
 		this.setCreativeTab(DemolitionMan.DemoMan);
-		this.setUnlocalizedName("9x9 Charge");
+		this.setUnlocalizedName("7x7 Charge");
 	}
 	
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister icon){
 		this.blockIcon = icon.registerIcon(Reasource.Mod_ID + ":" + "3x3tb");
-		this.iconFront = icon.registerIcon(Reasource.Mod_ID + ":" + "9x9");
+		this.iconFront = icon.registerIcon(Reasource.Mod_ID + ":" + "7x7");
 		this.iconLeft = icon.registerIcon(Reasource.Mod_ID + ":" + "3x3left");
 		this.iconRight = icon.registerIcon(Reasource.Mod_ID + ":" + "3x3right");
 		this.iconSideDown = icon.registerIcon(Reasource.Mod_ID + ":" + "3x3down");
@@ -49,7 +48,7 @@ public class NineByNine extends Block{
 	}
 	
 	public int idDropped(int par1, Random random, int par3){
-		return dman.Blocks.NineByNine.blockID;
+		return dman.Blocks.SevenBySeven.blockID;
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -127,34 +126,34 @@ public class NineByNine extends Block{
 	}
 	
 	public TileEntity createNewTileEntity(World world){
-		 return new dman.tileEntity.TileEntNineByNine();
+		 return new dman.tileEntity.TileEntFiveByFive();
 	}
 	
 	@Override
 	public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase entityLivingBase, ItemStack itemstack){
 		//System.out.println(entityLivingBase.rotationPitch);
-				//Straight up is -90 straight down in 90 centered is 0
-				//int h = MathHelper.floor_double((double)(entityLivingBase.rotationPitch * 3.0F / 180.0F ) + 0.5D);
-				int h = 0;
-				if (entityLivingBase.rotationPitch <= -50){
-					h = -1;
-				}
-				if (entityLivingBase.rotationPitch >= 50){
-					h = 1;
-				}
-				if (entityLivingBase.rotationPitch > -50 && entityLivingBase.rotationPitch < 50){
-					h = 0;
-				}
-				
-				int l = MathHelper.floor_double((double)(entityLivingBase.rotationYaw * 4.0F / 360.0F ) + 0.5D) & 3;
-				System.out.println(h);
+		//Straight up is -90 straight down in 90 centered is 0
+		//int h = MathHelper.floor_double((double)(entityLivingBase.rotationPitch * 3.0F / 180.0F ) + 0.5D);
+		int h = 0;
+		if (entityLivingBase.rotationPitch <= -50){
+			h = -1;
+		}
+		if (entityLivingBase.rotationPitch >= 50){
+			h = 1;
+		}
+		if (entityLivingBase.rotationPitch > -50 && entityLivingBase.rotationPitch < 50){
+			h = 0;
+		}
+		
+		int l = MathHelper.floor_double((double)(entityLivingBase.rotationYaw * 4.0F / 360.0F ) + 0.5D) & 3;
+		System.out.println(h);
 		switch(h){
 		case -1:{
 			world.setBlockMetadataWithNotify(x, y, z, 1, 2);
 			//BlockFront = 1;
 		}
 		break;
-		case 0: {
+		case 0: { // Looking straight ahead
 			
 			if (l == 0){
 				world.setBlockMetadataWithNotify(x, y, z, 2, 2);
@@ -187,114 +186,111 @@ public class NineByNine extends Block{
 	
 	@Override
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float hitx, float hity, float hitz){
-		
-		//System.out.println("(" + x + "," + y + "," + z + ")");
-		//System.out.println(world.getBlockMetadata(x, y, z));
 		switch (world.getBlockMetadata(x, y, z)){
-		case 0:{
-			y -= BlockOffset;
-			for(int yl = y-ClearCenterOffset; yl <= y+ClearCenterOffset; yl ++){ //y loop
-				for(int xl = x-ClearCenterOffset; xl <= x+ClearCenterOffset; xl ++){ //x loop
-					for(int zl = z-ClearCenterOffset; zl <= z+ClearCenterOffset; zl ++){ //z loop
-						if (world.getBlockId(xl, yl, zl) == 7){
-							
-						}
-						else{
-						world.destroyBlock(xl, yl, zl, false);
-						}
-					}
-				}
-			}
-			y +=BlockOffset;
-		}
-		break;
-		case 1:{
-			y += BlockOffset;
-			for(int yl = y-ClearCenterOffset; yl <= y+ClearCenterOffset; yl ++){ //y loop
-				for(int xl = x-ClearCenterOffset; xl <= x+ClearCenterOffset; xl ++){ //x loop
-					for(int zl = z-ClearCenterOffset; zl <= z+ClearCenterOffset; zl ++){ //z loop
-						if (world.getBlockId(xl, yl, zl) == 7){
-							
-						}
-						else{
-						world.destroyBlock(xl, yl, zl, false);
+			case 0:{
+				y -= BlockOffset;
+				for(int yl = y-ClearCenterOffset; yl <= y+ClearCenterOffset; yl ++){ //y loop
+					for(int xl = x-ClearCenterOffset; xl <= x+ClearCenterOffset; xl ++){ //x loop
+						for(int zl = z-ClearCenterOffset; zl <= z+ClearCenterOffset; zl ++){ //z loop
+							if (world.getBlockId(xl, yl, zl) == 7){
+								
+							}
+							else{
+							world.destroyBlock(xl, yl, zl, false);
+							}
 						}
 					}
 				}
+				y +=BlockOffset;
 			}
-			y -= BlockOffset;
-		}
-		break;
-		case 2:{
-			z += BlockOffset;
-			for(int yl = y-ClearCenterOffset; yl <= y+ClearCenterOffset; yl ++){ //y loop
-				for(int xl = x-ClearCenterOffset; xl <= x+ClearCenterOffset; xl ++){ //x loop
-					for(int zl = z-ClearCenterOffset; zl <= z+ClearCenterOffset; zl ++){ //z loop
-						if (world.getBlockId(xl, yl, zl) == 7){
-							
-						}
-						else{
-						world.destroyBlock(xl, yl, zl, false);
+			break;
+			case 1:{
+				y += BlockOffset;
+				for(int yl = y-ClearCenterOffset; yl <= y+ClearCenterOffset; yl ++){ //y loop
+					for(int xl = x-ClearCenterOffset; xl <= x+ClearCenterOffset; xl ++){ //x loop
+						for(int zl = z-ClearCenterOffset; zl <= z+ClearCenterOffset; zl ++){ //z loop
+							if (world.getBlockId(xl, yl, zl) == 7){
+								
+							}
+							else{
+							world.destroyBlock(xl, yl, zl, false);
+							}
 						}
 					}
 				}
+				y -= BlockOffset;
 			}
-			z -= BlockOffset;
-		}
-		break;
-		case 3:{
-			z -= BlockOffset;
-			for(int yl = y-ClearCenterOffset; yl <= y+ClearCenterOffset; yl ++){ //y loop
-				for(int xl = x-ClearCenterOffset; xl <= x+ClearCenterOffset; xl ++){ //x loop
-					for(int zl = z-ClearCenterOffset; zl <= z+ClearCenterOffset; zl ++){ //z loop
-						if (world.getBlockId(xl, yl, zl) == 7){
-							
-						}
-						else{
-						world.destroyBlock(xl, yl, zl, false);
+			break;
+			case 2:{
+				z += BlockOffset;
+				for(int yl = y-ClearCenterOffset; yl <= y+ClearCenterOffset; yl ++){ //y loop
+					for(int xl = x-ClearCenterOffset; xl <= x+ClearCenterOffset; xl ++){ //x loop
+						for(int zl = z-ClearCenterOffset; zl <= z+ClearCenterOffset; zl ++){ //z loop
+							if (world.getBlockId(xl, yl, zl) == 7){
+								
+							}
+							else{
+							world.destroyBlock(xl, yl, zl, false);
+							}
 						}
 					}
 				}
+				z -= BlockOffset;
 			}
-			z += BlockOffset;
-		}
-		break;
-		case 4:{
-			x += BlockOffset;
-			for(int yl = y-ClearCenterOffset; yl <= y+ClearCenterOffset; yl ++){ //y loop
-				for(int xl = x-ClearCenterOffset; xl <= x+ClearCenterOffset; xl ++){ //x loop
-					for(int zl = z-ClearCenterOffset; zl <= z+ClearCenterOffset; zl ++){ //z loop
-						if (world.getBlockId(xl, yl, zl) == 7){
-							
-						}
-						else{
-						world.destroyBlock(xl, yl, zl, false);
+			break;
+			case 3:{
+				z -= BlockOffset;
+				for(int yl = y-ClearCenterOffset; yl <= y+ClearCenterOffset; yl ++){ //y loop
+					for(int xl = x-ClearCenterOffset; xl <= x+ClearCenterOffset; xl ++){ //x loop
+						for(int zl = z-ClearCenterOffset; zl <= z+ClearCenterOffset; zl ++){ //z loop
+							if (world.getBlockId(xl, yl, zl) == 7){
+								
+							}
+							else{
+							world.destroyBlock(xl, yl, zl, false);
+							}
 						}
 					}
 				}
+				z += BlockOffset;
 			}
-			x-=BlockOffset;
-		}
-		break;
-		case 5:{
-			x -= BlockOffset;
-			for(int yl = y-ClearCenterOffset; yl <= y+ClearCenterOffset; yl ++){ //y loop
-				for(int xl = x-ClearCenterOffset; xl <= x+ClearCenterOffset; xl ++){ //x loop
-					for(int zl = z-ClearCenterOffset; zl <= z+ClearCenterOffset; zl ++){ //z loop
-						if (world.getBlockId(xl, yl, zl) == 7){
-							
-						}
-						else{
-						world.destroyBlock(xl, yl, zl, false);
+			break;
+			case 4:{
+				x += BlockOffset;
+				for(int yl = y-ClearCenterOffset; yl <= y+ClearCenterOffset; yl ++){ //y loop
+					for(int xl = x-ClearCenterOffset; xl <= x+ClearCenterOffset; xl ++){ //x loop
+						for(int zl = z-ClearCenterOffset; zl <= z+ClearCenterOffset; zl ++){ //z loop
+							if (world.getBlockId(xl, yl, zl) == 7){
+								
+							}
+							else{
+							world.destroyBlock(xl, yl, zl, false);
+							}
 						}
 					}
 				}
+				x-=BlockOffset;
 			}
-			x += BlockOffset;
-		}
-		break;
-		}
-	world.destroyBlock(x, y, z, false);
-	return true;
-}
+			break;
+			case 5:{
+				x -= BlockOffset;
+				for(int yl = y-ClearCenterOffset; yl <= y+ClearCenterOffset; yl ++){ //y loop
+					for(int xl = x-ClearCenterOffset; xl <= x+ClearCenterOffset; xl ++){ //x loop
+						for(int zl = z-ClearCenterOffset; zl <= z+ClearCenterOffset; zl ++){ //z loop
+							if (world.getBlockId(xl, yl, zl) == 7){
+								
+							}
+							else{
+							world.destroyBlock(xl, yl, zl, false);
+							}
+						}
+					}
+				}
+				x += BlockOffset;
+			}
+			break;
+			}
+		world.destroyBlock(x, y, z, false);
+		return true;
+	}
 }
