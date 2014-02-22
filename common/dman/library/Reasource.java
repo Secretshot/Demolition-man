@@ -58,15 +58,15 @@ public class Reasource {
 	/*
 	 * ITEM REASOURCE INFORMATION
 	 */
-	public static final String ItemSuperEnrichedGunPowderULName = "enrichedgunpowder";
-	public static final String ItemSuperEnrichedGunPowderName = "Enriched Gunpowder";
-	public static final String ItemSuperEnrichedGunPowderTextName = "epowder";
+	public static final String ItemEnrichedGunPowderULName = "enrichedgunpowder";
+	public static final String ItemEnrichedGunPowderName = "Enriched Gunpowder";
+	public static final String ItemEnrichedGunPowderTextName = "epowder";
 	public static int ItemEnrichedGunPowderID = 4000;
 	public static int ItemEnrichedGunPowderIDdefault = 4000;
 	
-	public static final String ItemEnrichedGunPowderULName = "superenrichedgunpowder";
-	public static final String ItemEnrichedGunPowderName = "Super Enriched Gunpowder";
-	public static final String ItemEnrichedGunPowderTextName = "sepowder";
+	public static final String ItemSuperEnrichedGunPowderULName = "superenrichedgunpowder";
+	public static final String ItemSuperEnrichedGunPowderName = "Enriched Gunpowder";
+	public static final String ItemSuperEnrichedGunPowderTextName = "sepowder";
 	public static int ItemSuperEnrichedGunPowderID = 4001;
 	public static int ItemSuperEnrichedGunPowderIDdefault = 4001;
 }
