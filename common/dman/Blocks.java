@@ -19,30 +19,30 @@ public class Blocks {
 	
 	
 	public static void InitalizeBlocks(){
-		ShapeCharge = new dman.blocks.BlockShapeCharge(3001, Material.iron);
-		ThreeByThree = new dman.blocks.ThreeByThree(3002, Material.iron);
-		FiveByFive = new dman.blocks.FiveByFive(3003, Material.iron);
-		NineByNine = new dman.blocks.NineByNine(3004, Material.iron);
-		SevenBySeven = new dman.blocks.SevenBySeven(3005, Material.iron);
+		ShapeCharge = new dman.blocks.BlockShapeCharge(dman.library.Reasource.BlockShapeChargeID, Material.iron);
+		ThreeByThree = new dman.blocks.ThreeByThree(dman.library.Reasource.BlockThreeByThreeID, Material.iron);
+		FiveByFive = new dman.blocks.FiveByFive(dman.library.Reasource.BlockFiveByFiveID, Material.iron);
+		NineByNine = new dman.blocks.NineByNine(dman.library.Reasource.BlockNineByNineID, Material.iron);
+		SevenBySeven = new dman.blocks.SevenBySeven(dman.library.Reasource.BlockSevenBySevenID, Material.iron);
 		
 	}
 	
 	public static void RegisterBlocks(){
 		//Registers the Shape Charge Block
-		GameRegistry.registerBlock(dman.Blocks.ShapeCharge, Reasource.Mod_ID + dman.Blocks.ShapeCharge.getUnlocalizedName().substring(5) );
-		LanguageRegistry.addName(dman.Blocks.ShapeCharge, "Shape Charge");
+		GameRegistry.registerBlock(dman.Blocks.ShapeCharge, Reasource.Mod_ID + dman.library.Reasource.BlockShapeChargeULName );
+		LanguageRegistry.addName(dman.Blocks.ShapeCharge, dman.library.Reasource.BlockShapeChargeName);
 		
-		GameRegistry.registerBlock(dman.Blocks.ThreeByThree,  Reasource.Mod_ID + dman.Blocks.ThreeByThree.getUnlocalizedName().substring(5) );
-		LanguageRegistry.addName(dman.Blocks.ThreeByThree, "3x3 Charge");
+		GameRegistry.registerBlock(dman.Blocks.ThreeByThree,  Reasource.Mod_ID + dman.library.Reasource.BlockThreeByThreeULName );
+		LanguageRegistry.addName(dman.Blocks.ThreeByThree, dman.library.Reasource.BlockThreeByThreeName);
 		
-		GameRegistry.registerBlock(dman.Blocks.FiveByFive,  Reasource.Mod_ID + dman.Blocks.FiveByFive.getUnlocalizedName().substring(5) );
-		LanguageRegistry.addName(dman.Blocks.FiveByFive, "5x5 Charge");
+		GameRegistry.registerBlock(dman.Blocks.FiveByFive,  Reasource.Mod_ID + dman.library.Reasource.BlockFiveByFiveULName );
+		LanguageRegistry.addName(dman.Blocks.FiveByFive, dman.library.Reasource.BlockFiveByFiveName);
 		
-		GameRegistry.registerBlock(dman.Blocks.NineByNine,  Reasource.Mod_ID + dman.Blocks.NineByNine.getUnlocalizedName().substring(5) );
-		LanguageRegistry.addName(dman.Blocks.NineByNine, "9x9 Charge");
+		GameRegistry.registerBlock(dman.Blocks.NineByNine,  Reasource.Mod_ID + dman.library.Reasource.BlockNineByNineULName );
+		LanguageRegistry.addName(dman.Blocks.NineByNine, dman.library.Reasource.BlockNineByNineName);
 		
-		GameRegistry.registerBlock(dman.Blocks.SevenBySeven,  Reasource.Mod_ID + dman.Blocks.SevenBySeven.getUnlocalizedName().substring(5) );
-		LanguageRegistry.addName(dman.Blocks.SevenBySeven, "7x7 Charge");
+		GameRegistry.registerBlock(dman.Blocks.SevenBySeven,  Reasource.Mod_ID + dman.library.Reasource.BlockSevenBySevenULName );
+		LanguageRegistry.addName(dman.Blocks.SevenBySeven, dman.library.Reasource.BlockSevenBySevenName);
 	}
 	
 	

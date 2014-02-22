@@ -35,21 +35,21 @@ public class NineByNine extends Block{
 		this.setHardness(2.0F);
 		this.setStepSound(Block.soundMetalFootstep);
 		this.setCreativeTab(DemolitionMan.DemoMan);
-		this.setUnlocalizedName("9x9 Charge");
+		this.setUnlocalizedName(dman.library.Reasource.BlockNineByNineULName);
 	}
 	
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister icon){
-		this.blockIcon = icon.registerIcon(Reasource.Mod_ID + ":" + "3x3tb");
-		this.iconFront = icon.registerIcon(Reasource.Mod_ID + ":" + "9x9");
-		this.iconLeft = icon.registerIcon(Reasource.Mod_ID + ":" + "3x3left");
-		this.iconRight = icon.registerIcon(Reasource.Mod_ID + ":" + "3x3right");
-		this.iconSideDown = icon.registerIcon(Reasource.Mod_ID + ":" + "3x3down");
-		this.iconSideUp = icon.registerIcon(Reasource.Mod_ID + ":" + "3x3up");
+		this.blockIcon = icon.registerIcon(Reasource.Mod_ID + ":" + dman.library.Reasource.ChargeTopBottom);
+		this.iconFront = icon.registerIcon(Reasource.Mod_ID + ":" + dman.library.Reasource.BlockNineByNineTextName);
+		this.iconLeft = icon.registerIcon(Reasource.Mod_ID + ":" + dman.library.Reasource.ChargeLeft);
+		this.iconRight = icon.registerIcon(Reasource.Mod_ID + ":" + dman.library.Reasource.ChargeRight);
+		this.iconSideDown = icon.registerIcon(Reasource.Mod_ID + ":" + dman.library.Reasource.ChargeDown);
+		this.iconSideUp = icon.registerIcon(Reasource.Mod_ID + ":" + dman.library.Reasource.ChargeUp);
 	}
 	
 	public int idDropped(int par1, Random random, int par3){
-		return dman.Blocks.NineByNine.blockID;
+		return dman.library.Reasource.BlockNineByNineID;
 	}
 	
 	@SideOnly(Side.CLIENT)

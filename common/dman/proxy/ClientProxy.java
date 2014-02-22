@@ -8,6 +8,6 @@ public class ClientProxy extends CommonProxy {
 	
 	public void registerVariousThings() {
 		ClientRegistry.bindTileEntitySpecialRenderer(dman.tileEntity.TileEntityShapeCharge.class, new dman.renderer.RenderShapeCharge());
-		LanguageRegistry.instance().addStringLocalization(dman.DemolitionMan.DemoMan.getTranslatedTabLabel(), "Demolition Man");
+		LanguageRegistry.instance().addStringLocalization(dman.DemolitionMan.DemoMan.getTranslatedTabLabel(), dman.library.Reasource.Mod_Name);
 	}
 }

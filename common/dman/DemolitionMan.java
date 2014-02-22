@@ -31,35 +31,36 @@ public class DemolitionMan {
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event){
-			
+		ConfigHandler.init(event.getSuggestedConfigurationFile());
 	}
 	
 	@EventHandler
 	public void init(FMLInitializationEvent event){
-		
 		//Initialize the creative tab
 		DemoMan = new CreativeTabs("dmantab"){
 			@SideOnly(Side.CLIENT)
 			public int getTabIconIndex(){
-				return dman.Blocks.ThreeByThree.blockID;
+				return dman.library.Reasource.BlockThreeByThreeID;
 			}
 		};
-		
 		
 		//Initialize blocks
 		dman.Blocks.InitalizeBlocks();
 				
 		//Initialize Items
-		dman.Items.InitalizeItems();
+		dman.items.Items.InitalizeItems();
 		
 		//register Tile Entity
-		GameRegistry.registerTileEntity(dman.tileEntity.TileEntityShapeCharge.class, "Shape Charge");
+		GameRegistry.registerTileEntity(dman.tileEntity.TileEntityShapeCharge.class, dman.library.Reasource.BlockShapeChargeName);
 		
 		//Register BLocks
 		dman.Blocks.RegisterBlocks();
 		
 		//Register Items
-		dman.Items.RegisterItems();
+		dman.items.Items.RegisterItems();
+		
+		//Register Recipies
+		dman.Recepies.RegisterRecipes();
 		
 		proxy.registerVariousThings();
 		
