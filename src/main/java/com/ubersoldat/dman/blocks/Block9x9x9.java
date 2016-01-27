@@ -7,14 +7,13 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class Block9x9x9 extends BlockDman{
+public class Block9x9x9 extends BlockShapeCharge{
 	@SideOnly(Side.CLIENT)
 	private IIcon iconTop;
 	private IIcon iconFront;
@@ -35,7 +34,7 @@ public class Block9x9x9 extends BlockDman{
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister icon){
 		this.iconTop = icon.registerIcon(Resource.Mod_ID + ":" + Resource.ChargeTopBottom);
-		this.iconFront = icon.registerIcon(Resource.Mod_ID + ":" + Resource.Block5x5x5Name);
+		this.iconFront = icon.registerIcon(Resource.Mod_ID + ":" + Resource.Block9x9x9Name);
 		this.iconLeft = icon.registerIcon(Resource.Mod_ID + ":" + Resource.ChargeLeft);
 		this.iconRight = icon.registerIcon(Resource.Mod_ID + ":" + Resource.ChargeRight);
 		this.iconSideDown = icon.registerIcon(Resource.Mod_ID + ":" + Resource.ChargeDown);
@@ -181,115 +180,9 @@ public class Block9x9x9 extends BlockDman{
 		}
 	}
 
-	@Override
-	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float hitx, float hity, float hitz){
-		//System.out.println("(" + x + "," + y + "," + z + ")");
-		//System.out.println(world.getBlockMetadata(x, y, z));
-		switch (world.getBlockMetadata(x, y, z)){
-			case 0:{
-				y -= BlockOffset;
-				for(int yl = y-ClearCenterOffset; yl <= y+ClearCenterOffset; yl ++){ //y loop
-					for(int xl = x-ClearCenterOffset; xl <= x+ClearCenterOffset; xl ++){ //x loop
-						for(int zl = z-ClearCenterOffset; zl <= z+ClearCenterOffset; zl ++){ //z loop
-							if (world.getBlock(xl, yl, zl) == Blocks.bedrock){
-
-							}
-							else{
-								world.func_147480_a(xl, yl, zl,true);
-							}
-						}
-					}
-				}
-				y +=BlockOffset;
-			}
-			break;
-			case 1:{
-				y += BlockOffset;
-				for(int yl = y-ClearCenterOffset; yl <= y+ClearCenterOffset; yl ++){ //y loop
-					for(int xl = x-ClearCenterOffset; xl <= x+ClearCenterOffset; xl ++){ //x loop
-						for(int zl = z-ClearCenterOffset; zl <= z+ClearCenterOffset; zl ++){ //z loop
-							if (world.getBlock(xl, yl, zl) == Blocks.bedrock){
-
-							}
-							else{
-								world.func_147480_a(xl, yl, zl,true);
-							}
-						}
-					}
-				}
-				y -= BlockOffset;
-			}
-			break;
-			case 2:{
-				z += BlockOffset;
-				for(int yl = y-ClearCenterOffset; yl <= y+ClearCenterOffset; yl ++){ //y loop
-					for(int xl = x-ClearCenterOffset; xl <= x+ClearCenterOffset; xl ++){ //x loop
-						for(int zl = z-ClearCenterOffset; zl <= z+ClearCenterOffset; zl ++){ //z loop
-							if (world.getBlock(xl, yl, zl) == Blocks.bedrock){
-
-							}
-							else{
-								world.func_147480_a(xl, yl, zl,true);
-							}
-						}
-					}
-				}
-				z -= BlockOffset;
-			}
-			break;
-			case 3:{
-				z -= BlockOffset;
-				for(int yl = y-ClearCenterOffset; yl <= y+ClearCenterOffset; yl ++){ //y loop
-					for(int xl = x-ClearCenterOffset; xl <= x+ClearCenterOffset; xl ++){ //x loop
-						for(int zl = z-ClearCenterOffset; zl <= z+ClearCenterOffset; zl ++){ //z loop
-							if (world.getBlock(xl, yl, zl) == Blocks.bedrock){
-
-							}
-							else{
-								world.func_147480_a(xl, yl, zl,true);
-							}
-						}
-					}
-				}
-				z += BlockOffset;
-			}
-			break;
-			case 4:{
-				x += BlockOffset;
-				for(int yl = y-ClearCenterOffset; yl <= y+ClearCenterOffset; yl ++){ //y loop
-					for(int xl = x-ClearCenterOffset; xl <= x+ClearCenterOffset; xl ++){ //x loop
-						for(int zl = z-ClearCenterOffset; zl <= z+ClearCenterOffset; zl ++){ //z loop
-							if (world.getBlock(xl, yl, zl) == Blocks.bedrock){
-
-							}
-							else{
-								world.func_147480_a(xl, yl, zl,true);
-							}
-						}
-					}
-				}
-				x-=BlockOffset;
-			}
-			break;
-			case 5:{
-				x -= BlockOffset;
-				for(int yl = y-ClearCenterOffset; yl <= y+ClearCenterOffset; yl ++){ //y loop
-					for(int xl = x-ClearCenterOffset; xl <= x+ClearCenterOffset; xl ++){ //x loop
-						for(int zl = z-ClearCenterOffset; zl <= z+ClearCenterOffset; zl ++){ //z loop
-							if (world.getBlock(xl, yl, zl) == Blocks.bedrock){
-
-							}
-							else{
-								world.func_147480_a(xl, yl, zl,true);
-							}
-						}
-					}
-				}
-				x += BlockOffset;
-			}
-			break;
-		}
-		world.destroyBlockInWorldPartially(x, y, z, 1 , 1);
-		return true;
-	}
+    @Override
+    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float hitx, float hity, float hitz){
+        ShapeObject.Demolish(world,x,y,z, BlockOffset, ClearCenterOffset);
+        return super.onBlockActivated(world, x, y, z, player, side, hitx, hity, hitz);
+    }
 }

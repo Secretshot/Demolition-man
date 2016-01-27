@@ -1,6 +1,7 @@
 item.dman:enrichedgunpowder.name=Enriched Gun Powder
 item.dman:superenrichedgunpowder.name=Super Enriched Gun Powder
 tile.dman:3x3x3.name=3x3x3 Shape Charge
+tile.dman:3x3x6.name=3x3x6 Shape Charge
 tile.dman:5x5x5.name=5x5x5 Shape Charge
 tile.dman:7x7x7.name=7x7x7 Shape Charge
 tile.dman:9x9x9.name=9x9x9 Shape Charge

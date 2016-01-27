@@ -16,9 +16,9 @@ public class Recepies {
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ModItems.enrichedGunPowder, 2), new ItemStack(Items.gunpowder), "dustRedstone"));
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ModItems.superEnrichedGunPowder, 2), new ItemStack(ModItems.enrichedGunPowder), "dustGlowstone"));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.Threex3x3), "XXX", "YYX", "XXX", 'Y', new ItemStack(ModItems.enrichedGunPowder) , 'X',"stone"));
-		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.Threex3x3, 1), "YXX", "YYX", "YXX", 'Y', new ItemStack(ModItems.enrichedGunPowder) , 'X',"stone"));
-		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.Threex3x3, 1), "YXX", "YYX", "YXX", 'Y', new ItemStack(ModItems.superEnrichedGunPowder) , 'X',"ingotIron"));
-		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.Threex3x3, 1), "YXX", "YYX", "YXX", 'Y',  new ItemStack(ModItems.superEnrichedGunPowder) , 'X',"obsidian"));
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.Fivex5x5, 1), "YXX", "YYX", "YXX", 'Y', new ItemStack(ModItems.enrichedGunPowder) , 'X',"stone"));
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.Sevenx7x7, 1), "YXX", "YYX", "YXX", 'Y', new ItemStack(ModItems.superEnrichedGunPowder) , 'X',"ingotIron"));
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.Ninex9x9, 1), "YXX", "YYX", "YXX", 'Y',  new ItemStack(ModItems.superEnrichedGunPowder) , 'X',"obsidian"));
 
 	}
 }

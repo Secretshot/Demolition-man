@@ -3,6 +3,7 @@ package com.ubersoldat.dman;
 import com.ubersoldat.dman.handler.ConfigHandler;
 import com.ubersoldat.dman.init.ModBlocks;
 import com.ubersoldat.dman.init.ModItems;
+import com.ubersoldat.dman.init.Recepies;
 import com.ubersoldat.dman.proxy.IProxy;
 import com.ubersoldat.dman.reference.Resource;
 import com.ubersoldat.dman.utility.LogHelper;
@@ -37,10 +38,9 @@ public class DemolitionMan {
 		ConfigHandler.init(event.getSuggestedConfigurationFile());
 		FMLCommonHandler.instance().bus().register(new ConfigHandler());
 
-        //Initialize blocks
-        ModBlocks.init();
-        //Initialize Items
-        ModItems.init();
+		ModItems.init(); //Initialize Items
+
+        ModBlocks.init(); //Initialize blocks
 
 		LogHelper.info("Pre Initialization Complete!");
 	}
@@ -48,10 +48,10 @@ public class DemolitionMan {
 	@EventHandler
 	public void init(FMLInitializationEvent event){
 
-		//register Tile Entity
-		//GameRegistry.registerTileEntity(TileEntityShapeCharge.class, Resource.BlockShapeChargeName);
+		Recepies.init();
 
 		proxy.registerVariousThings();
+
 		LogHelper.info("Initialization Complete!");
 	}
 	
