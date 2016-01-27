@@ -28,6 +28,8 @@ public class Resource {
 	public static final String BlockShapeChargeName = "shapecharge";
 	public static final String Block3x3x3Name = "3x3x3";
 	public static final String Block3x3x6Name = "3x3x6";
+	public static final String Block3x3x9Name = "3x3x9";
+    public static final String Block3x3x12Name = "3x3x12";
 	public static final String Block5x5x5Name = "5x5x5";
 	public static final String Block7x7x7Name = "7x7x7";
 	public static final String Block9x9x9Name = "9x9x9";

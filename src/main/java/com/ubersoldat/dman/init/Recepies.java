@@ -12,7 +12,9 @@ public class Recepies {
 	public static void init(){
 
 		OreDictionary.registerOre("obsidian", Blocks.obsidian);
-		
+
+		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.Threex3x6), new ItemStack(ModBlocks.Threex3x3),new ItemStack(ModBlocks.Threex3x3));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.Threex3x9), new ItemStack(ModBlocks.Threex3x3),new ItemStack(ModBlocks.Threex3x3),new ItemStack(ModBlocks.Threex3x3));
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ModItems.enrichedGunPowder, 2), new ItemStack(Items.gunpowder), "dustRedstone"));
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ModItems.superEnrichedGunPowder, 2), new ItemStack(ModItems.enrichedGunPowder), "dustGlowstone"));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.Threex3x3), "XXX", "YYX", "XXX", 'Y', new ItemStack(ModItems.enrichedGunPowder) , 'X',"stone"));

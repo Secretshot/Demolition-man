@@ -6,14 +6,17 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
-public class Block3x3x6 extends BlockShapeCharge {
+/**
+ * Created by Soldat on 1/27/2016.
+ */
+public class Block3x3x9 extends BlockShapeCharge{
     private final int BlockOffset = 2;
     private final int ClearCenterOffset = 1; // Blocks around the center
-    private final int Depth = 5; // Desired Depth -1
+    private final int Depth = 8; // Desired Depth -1
 
-    public Block3x3x6() {
+    public Block3x3x9() {
         super();
-        this.setBlockName(Resource.Block3x3x6Name);
+        this.setBlockName(Resource.Block3x3x9Name);
     }
 
     public TileEntity createNewTileEntity(World world)
@@ -26,5 +29,4 @@ public class Block3x3x6 extends BlockShapeCharge {
         ShapeObject.DemolishDeep(world,x,y,z, BlockOffset, ClearCenterOffset,Depth);
         return true;
     }
-
 }
