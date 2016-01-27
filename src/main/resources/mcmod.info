@@ -1,0 +1,16 @@
+[{
+    "modid": "dman",
+    "name": "Demolition Man",
+    "description": "This mod adds A multitude of different explosives and related items and block to the game for all the BOOM you could want!",
+    "version": "0.5",
+    "mcversion": "1.7.10",
+    "url": "https://github.com/Secretshot/Demolition-man.git",
+    "updateUrl": "",
+    "authorList": [ "Secret_shot" ],
+    "credits": "Contributors: https://github.com/Secretshot/Demolition-man/contributors",
+    "logoFile": "",
+    "screenshots": [],
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": []
+}]
