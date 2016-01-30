@@ -1,5 +1,8 @@
 package com.ubersoldat.dman.reference;
 
+import net.minecraft.item.ItemArmor;
+import net.minecraftforge.common.util.EnumHelper;
+
 public class Resource {
 	/*
 	 * MOD INFORMATION SECTION
@@ -41,6 +44,17 @@ public class Resource {
 	/*
 	 * ITEM RESOURCE INFORMATION
 	 */
+	public static final int[] DamageReduction = new int[]{3,8,6,3};
+	public static final ItemArmor.ArmorMaterial KevlarMaterial = EnumHelper.addArmorMaterial("KevlarMaterial", 55,DamageReduction ,30);
+	public static final String BombSuitTexture = "BombSuit";
+	public static final String BombSuitHelmet = "BombSuitHelmet";
+	public static final String BombSuitBoots = "BombSuitBoots";
+	public static final String BombSuitLeggings = "BombSuitLeggings";
+	public static final String BombSuitChestPlate = "BombSuitChestPlate";
+
+    public static final String ItemKevlarULName = "kevlar";
+    public static final String ItemKevlarPlateULName = "kevlarplate";
+    public static final String ItemUnRefinedKevlarPlateULName = "unrefinedkevlarplate";
 	public static final String ItemEnrichedGunPowderULName = "enrichedgunpowder";
 	public static final String ItemSuperEnrichedGunPowderULName = "superenrichedgunpowder";
 

@@ -28,6 +28,17 @@ public class Recepies {
         GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.Fivex5x15), new ItemStack(ModBlocks.Fivex5x5),new ItemStack(ModBlocks.Fivex5x5),new ItemStack(ModBlocks.Fivex5x5));
         GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.Fivex5x15), new ItemStack(ModBlocks.Fivex5x5),new ItemStack(ModBlocks.Fivex5x10));
 
+		GameRegistry.addSmelting(new ItemStack(Items.wheat), new ItemStack(ModItems.kevlar), 0F);
+		GameRegistry.addSmelting(new ItemStack(ModItems.unrefinedkevlarplate), new ItemStack(ModItems.kevlarplate), 0F);
+
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.unrefinedkevlarplate), "XYX", "YXY", "XYX", 'Y', "ingotIron", 'X',new ItemStack(ModItems.kevlar)));
+		GameRegistry.addRecipe(new ItemStack(ModItems.BombSuitBoots), "   ", "X X", "XYX", 'Y', new ItemStack(ModItems.enrichedGunPowder) , 'X',new ItemStack(ModItems.kevlarplate));
+		GameRegistry.addRecipe(new ItemStack(ModItems.BombSuitLeggins), "XXX", "XYX", "X X", 'Y', new ItemStack(ModItems.enrichedGunPowder) , 'X',new ItemStack(ModItems.kevlarplate));
+		GameRegistry.addRecipe(new ItemStack(ModItems.BombSuitChestPlate), "XYX", "XXX", "XXX", 'Y', new ItemStack(ModItems.enrichedGunPowder) , 'X',new ItemStack(ModItems.kevlarplate));
+		GameRegistry.addRecipe(new ItemStack(ModItems.BombSuitHelmet), "XXX", "XYX", "   ", 'Y', new ItemStack(ModItems.enrichedGunPowder) , 'X',new ItemStack(ModItems.kevlarplate));
+
+
+
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.Threex3x3), "XXX", "YYX", "XXX", 'Y', new ItemStack(ModItems.enrichedGunPowder) , 'X',"stone"));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.Fivex5x5, 1), "YXX", "YYX", "YXX", 'Y', new ItemStack(ModItems.enrichedGunPowder) , 'X',"stone"));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.Sevenx7x7, 1), "YXX", "YYX", "YXX", 'Y', new ItemStack(ModItems.superEnrichedGunPowder) , 'X',"ingotIron"));

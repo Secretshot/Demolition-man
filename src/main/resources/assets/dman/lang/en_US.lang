@@ -1,5 +1,12 @@
 item.dman:enrichedgunpowder.name=Enriched Gun Powder
 item.dman:superenrichedgunpowder.name=Super Enriched Gun Powder
+item.dman:BombSuitHelmet.name=Bomb Suit Helmet
+item.dman:BombSuitChestPlate.name=Bomb Suit Chest Plate
+item.dman:BombSuitLeggings.name=Bomb Suit Leggings
+item.dman:BombSuitBoots.name=Bomb Suit Boots
+item.dman:kevlar.name=Kevlar Mix
+item.dman:kevlarplate.name=Kevlar Plate
+item.dman:unrefinedkevlarplate.name=Un-Refined Kevlar Plate
 tile.dman:3x3x3.name=3x3x3 Shape Charge
 tile.dman:3x3x6.name=3x3x6 Shape Charge
 tile.dman:3x3x9.name=3x3x9 Shape Charge
